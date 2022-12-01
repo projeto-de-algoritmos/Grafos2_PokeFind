@@ -4,7 +4,7 @@ import br.com.pokegraph.dto.PokemonDTO;
 import br.com.pokegraph.exception.EmptyListPokemonException;
 import br.com.pokegraph.exception.NoExistentPokemonException;
 import br.com.pokegraph.model.Pokemon;
-import br.com.pokegraph.dto.repository.PokemonRepository;
+import br.com.pokegraph.repository.PokemonRepository;
 import br.com.pokegraph.utils.MatrixUtils;
 import org.springframework.stereotype.Service;
 

@@ -2,21 +2,36 @@ package br.com.pokegraph.service;
 
 import br.com.pokegraph.model.Area;
 import br.com.pokegraph.model.Pokemon;
-import br.com.pokegraph.dto.repository.PokemonRepository;
+import br.com.pokegraph.repository.AreaRepository;
+import br.com.pokegraph.repository.PokemonRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
 
 @Service
 public class AreaService {
-    private final PokemonRepository repository;
+    private final AreaRepository areaRepository;
+    private final PokemonRepository pokemonRepository;
 
-    public AreaService(PokemonRepository repository) {
-        this.repository = repository;
+    public AreaService(AreaRepository areaRepository, PokemonRepository pokemonRepository) {
+        this.areaRepository = areaRepository;
+        this.pokemonRepository = pokemonRepository;
     }
 
-    public List<Area> findAllByPokemon(){
-        return null;
+    public List<Area> findAllByPokemon(Long id){
+        Pokemon pokemon = pokemonRepository.findById(id).orElseThrow();
+
+        List<Area> allAreas = areaRepository.findAll();
+
+        List<Area> pokemonAreas = new ArrayList<>();
+
+        allAreas.forEach(area->{
+            if(area.getPokemons().contains(pokemon.getName().toLowerCase())){
+                pokemonAreas.add(area);
+            }
+        });
+
+        return pokemonAreas;
     }
 
     public Area findClosestArea(Pokemon pokemon, MapGraph graph, AreaNode node){

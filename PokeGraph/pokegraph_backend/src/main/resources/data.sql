@@ -196,4 +196,4 @@ INSERT INTO area (id, name, pokemons) VALUES
     (42L, 'Route 23', 'ditto fearow ekans sandshrew spearow arbok sandslash nidorino nidorina mankey primeape magikarp poliwag goldeen slowbro kingler seadra seaking poliwhirl'),
     (43L, 'Victory Road', 'onix machop zubat geodude golbat machoke marowak graveler venomoth moltres'),
     (44L, 'Route 24', 'weedle caterpie oddish bellsprout pidgey kakuna metapod abra venonat pidgeotto magikarp poliwag goldeen psyduck krabby seaking charmander'),
-    (45L, 'Route 25', 'weedle caterpie oddish bellsprout kakuna metapod pidgey abra venonat pidgeotto magikarp poliwag goldeen psyduck krabby kingler'),
+    (45L, 'Route 25', 'weedle caterpie oddish bellsprout kakuna metapod pidgey abra venonat pidgeotto magikarp poliwag goldeen psyduck krabby kingler');
