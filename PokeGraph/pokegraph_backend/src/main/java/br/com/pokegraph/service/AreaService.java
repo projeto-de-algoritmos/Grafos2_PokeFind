@@ -114,6 +114,8 @@ public class AreaService {
         AreaNode node43 = new AreaNode(43L);
         AreaNode node44 = new AreaNode(44L);
         AreaNode node45 = new AreaNode(45L);
+        AreaNode node46 = new AreaNode(46L);
+        AreaNode node47 = new AreaNode(47L);
 
         node1.addDestination(node2, 1);
         node1.addDestination(node40, 5);
@@ -129,14 +131,14 @@ public class AreaService {
         node4.addDestination(node3, 2);
         node4.addDestination(node5, 2);
 
-        node5.addDestination(node7, 4);
+        node5.addDestination(node47, 1);
         node5.addDestination(node4, 2);
 
         node6.addDestination(node4, 1);
         node6.addDestination(node25, 1);
         node6.addDestination(node16, 1);
 
-        node7.addDestination(node5, 4);
+        node7.addDestination(node47, 3);
         node7.addDestination(node8, 1);
 
         node8.addDestination(node7, 1);
@@ -177,13 +179,11 @@ public class AreaService {
         node18.addDestination(node32, 3);
 
         node19.addDestination(node13, 2);
-        node19.addDestination(node21, 9);
-        node19.addDestination(node26, 9);
-        node19.addDestination(node20, 3);
+        node19.addDestination(node46, 2);
 
-        node20.addDestination(node19, 3);
+        node20.addDestination(node46, 1);
 
-        node21.addDestination(node19, 9);
+        node21.addDestination(node46, 7);
         node21.addDestination(node24, 7);
 
         node22.addDestination(node24, 3);
@@ -197,7 +197,7 @@ public class AreaService {
         node25.addDestination(node6, 1);
         node25.addDestination(node26, 1);
 
-        node26.addDestination(node19, 9);
+        node26.addDestination(node46, 7);
         node26.addDestination(node25, 1);
         node26.addDestination(node27, 7);
 
@@ -257,6 +257,14 @@ public class AreaService {
 
         node45.addDestination(node44, 1);
 
+        node46.addDestination(node20, 1);
+        node46.addDestination(node26, 7);
+        node46.addDestination(node19, 2);
+        node46.addDestination(node21, 7);
+
+        node47.addDestination(node7, 3);
+        node47.addDestination(node5, 1);
+
 
         MapGraph graph = new MapGraph();
 
@@ -305,6 +313,8 @@ public class AreaService {
         graph.addAreaNode(node43);
         graph.addAreaNode(node44);
         graph.addAreaNode(node45);
+        graph.addAreaNode(node46);
+        graph.addAreaNode(node47);
 
 
         return graph;
