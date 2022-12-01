@@ -24,4 +24,13 @@ public class AreaController {
         }
     }
 
+    @GetMapping(path = "/areas/{PokemonId}/{AreaId}")
+    public ResponseEntity<?> findClosestArea(@PathVariable Long PokemonId,@PathVariable Long AreaId){
+        try {
+            return ResponseEntity.ok(service.findClosestArea(PokemonId, AreaId));
+        } catch (EmptyListPokemonException ex) {
+            return ResponseEntity.badRequest().body(ex.getMessage());
+        }
+    }
+
 }
