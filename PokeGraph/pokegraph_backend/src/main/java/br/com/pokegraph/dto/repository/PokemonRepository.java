@@ -1,4 +1,4 @@
-package br.com.pokegraph.repository;
+package br.com.pokegraph.dto.repository;
 
 import br.com.pokegraph.model.Pokemon;
 import org.springframework.data.jpa.repository.JpaRepository;
