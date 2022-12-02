@@ -56,6 +56,7 @@ public class AreaService {
         AreaNode closestNode = new AreaNode(100L);
         closestNode.setDistance(1000);
 
+        //percorre os nodes e vê se faz parte do que quer, com isso compara para ver se é o menor
         while (nodeIterator.hasNext()){
             AreaNode next = nodeIterator.next();
             if (pokemonAreas.contains(next.getId())){
@@ -436,8 +437,5 @@ public class AreaService {
         }
         return graph;
     }
-
-//    private static AreaNode getClosest(Long id) {
-//    }
 
 }

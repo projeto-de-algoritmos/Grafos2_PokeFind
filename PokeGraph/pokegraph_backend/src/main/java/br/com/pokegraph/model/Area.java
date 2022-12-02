@@ -23,6 +23,7 @@ public class Area {
     private String name;
     private String pokemons;
 
+    private String url;
     public Long getId() {
         return id;
     }
@@ -45,5 +46,13 @@ public class Area {
 
     public void setPokemons(String pokemons) {
         this.pokemons = pokemons;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }
