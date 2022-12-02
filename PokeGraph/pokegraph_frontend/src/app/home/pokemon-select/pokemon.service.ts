@@ -3,7 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Pokemons} from './pokemons';
 import {Observable} from "rxjs";
 
-const API = 'api';
+const API = 'apiPokemon';
 
 @Injectable({
   providedIn: 'root'

@@ -9,11 +9,9 @@ import lombok.NoArgsConstructor;
 public class AreaDTO {
     private Long id;
     private String name;
-    private String pokemons;
 
     public AreaDTO(Area area){
         this.id = area.getId();
         this.name = area.getName();
-        this.pokemons = area.getPokemons();
     }
 }
