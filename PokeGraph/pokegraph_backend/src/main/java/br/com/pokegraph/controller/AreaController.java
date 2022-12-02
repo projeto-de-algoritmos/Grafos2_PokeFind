@@ -33,4 +33,12 @@ public class AreaController {
         }
     }
 
+    @GetMapping(path = "/areas")
+    public ResponseEntity<?> listAllAreas(){
+        try {
+            return ResponseEntity.ok(service.findAll());
+        } catch (EmptyListPokemonException ex) {
+            return ResponseEntity.badRequest().body(ex.getMessage());
+        }
+    }
 }
