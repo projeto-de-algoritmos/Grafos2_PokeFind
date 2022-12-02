@@ -1,5 +1,8 @@
 package br.com.pokegraph.service;
 
+import br.com.pokegraph.dto.AreaDTO;
+import br.com.pokegraph.dto.PokemonDTO;
+import br.com.pokegraph.exception.EmptyListPokemonException;
 import br.com.pokegraph.model.Area;
 import br.com.pokegraph.model.Pokemon;
 import br.com.pokegraph.repository.AreaRepository;
@@ -17,6 +20,16 @@ public class AreaService {
     public AreaService(AreaRepository areaRepository, PokemonRepository pokemonRepository) {
         this.areaRepository = areaRepository;
         this.pokemonRepository = pokemonRepository;
+    }
+
+    public List<AreaDTO> findAll() {
+        List<AreaDTO> areaDTOList = new ArrayList<>();
+        List<Area> areaList = areaRepository.findAll();
+        areaList.forEach(area -> areaDTOList.add(new AreaDTO(area)));
+        if (areaDTOList.isEmpty()) {
+            throw new EmptyListPokemonException("Não existe pokêmon's cadastrados!");
+        }
+        return areaDTOList;
     }
 
     public List<Long> findAllByPokemon(Long id){

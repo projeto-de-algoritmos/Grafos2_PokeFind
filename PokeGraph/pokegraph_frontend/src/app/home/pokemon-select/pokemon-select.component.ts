@@ -5,6 +5,8 @@ import {Pokemon} from './pokemons';
 import {MatSelectChange} from "@angular/material/select";
 import {MatDialog} from "@angular/material/dialog";
 import {ModalWinnerComponent} from "../modal-winner/modal-winner.component";
+import {AreaService} from "./area.service";
+import {Area} from "./areas";
 
 
 @Component({
@@ -14,7 +16,8 @@ import {ModalWinnerComponent} from "../modal-winner/modal-winner.component";
 })
 export class PokemonSelectComponent implements OnInit {
 
-  options: any[] = [];
+  optionsPokemon: any[] = [];
+  optionsAreas: any[] = [];
   imageAlt: any;
   imageSourceSelf: any;
   imageSourceOther: any;
@@ -27,6 +30,7 @@ export class PokemonSelectComponent implements OnInit {
   });
 
   constructor(
+    private areaService: AreaService,
     private pokemonService: PokemonService,
     private formBuilder: FormBuilder,
     public dialog: MatDialog,
@@ -35,14 +39,21 @@ export class PokemonSelectComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.firstPokemon)
+
     this.pokemonService.listPokemon().subscribe((response: any) => {
       response.map((pokemon: Pokemon) => {
-        this.extract(pokemon);
+        this.extractPokemon(pokemon);
       });
-      this.options = response
-      console.log(this.options)
+      this.optionsPokemon = response
+      console.log(this.optionsPokemon)
     });
+
+    this.areaService.listArea().subscribe((response: any) => {
+      response.map((area: Area) => {
+        this.extractArea(area);
+      });
+      this.optionsAreas = response;
+    })
   }
 
   openDialog(response: any): void {
@@ -57,11 +68,18 @@ export class PokemonSelectComponent implements OnInit {
     });
   }
 
-  extract(pokemon: Pokemon) {
+  extractPokemon(pokemon: Pokemon) {
     return {
       id: pokemon.id,
       name: pokemon.name,
       url: pokemon.url
+    };
+  }
+
+  extractArea(area: Area) {
+    return {
+      id: area.id,
+      name: area.name
     };
   }
 
