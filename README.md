@@ -1,7 +1,7 @@
-# PokeGraph
+# PokeFind
 
 **Número da Lista**: Não se aplica<br>
-**Conteúdo da Disciplina**: Grafos 1<br>
+**Conteúdo da Disciplina**: Grafos 2<br>
 
 ## Alunos
 |Matrícula | Aluno |
@@ -10,10 +10,12 @@
 | 18/0145363 |  Yan Andrade de Sena  |
 
 ## Sobre 
-O objetivo do Pokegraph é apresentar uma interface direta e simples de utilizar, que tem a função de mostrar o resultado
-da batalha entre dois Pokemons, se baseando no tipo deles. Para isso é utilizado a estrutura de Grafos, que origina 
-o nome do projeto:
-Pokegraph!
+O objetivo do PokeFind é apresentar uma interface direta e simples de utilizar, que tem a função de mostrar o lugar onde o pokemon foi encontrado. Para isso é utilizado o algoritmo de djikstra e estrutura de Grafos com arestas com pesos, onde estabelece a difculdade ou facilidade de acesso as rotas, cidades e outros lugares. 
+
+## Grafo Utilizado
+
+![Grafo_Kanto](assets-readme/grafo-kanto.png)
+
 
 ## Screenshots
 
