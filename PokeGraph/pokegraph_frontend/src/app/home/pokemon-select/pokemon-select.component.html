@@ -1,4 +1,4 @@
-<form class="form mt-4" [formGroup]="pokemonForm" (ngSubmit)="battle()" >
+<form class="form mt-4" [formGroup]="pokemonForm" (ngSubmit)="find()" >
   <div class="form-group">
     <div class="row" style="overflow:auto;">
       <div class="column">
@@ -8,13 +8,13 @@
     <div class="column">
       <h4 class="battle-text">Select Pokemon to find</h4>
       <div style="text-align: center;">
-        <img *ngIf="secondPokemon !== null" class="img-responsive" style="width:220px; :220px" [src]="imageSourceOther">
-        <img *ngIf="secondPokemon === null" class="question-mark" style="width:220px; :220px" src="/assets/blackQuestionMark.png">
+        <img *ngIf="pokemon !== null" class="img-responsive" style="width:220px; :220px" [src]="imageSourceOther">
+        <img *ngIf="pokemon === null" class="question-mark" style="width:220px; :220px" src="/assets/blackQuestionMark.png">
       </div>
       <div>
         <div style="text-align: center;">
         <mat-form-field appearance="fill">
-          <mat-select placeholder="Select Pokemon" class="form-control" (selectionChange)="loadPokemonOther($event)">
+          <mat-select placeholder="Select Pokemon" class="form-control" (selectionChange)="loadPokemonSelf($event)">
             <mat-option *ngFor="let option of optionsPokemon" [value]="option">
               {{option.name}}
               <img class="img-responsive" style="width:30px; height:30px;position: absolute; right: 0" src="{{option.url}}">

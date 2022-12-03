@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Areas} from "./areas";
+import {Pokemons} from "./pokemons";
 
 const API = 'apiArea';
 
@@ -14,6 +15,10 @@ export class AreaService {
 
   listArea(): Observable<Areas> {
     return this.http.get<Areas>(`${API}/areas`);
+  }
+
+  findClosestArea(pokemonId: number, areaId: number): Observable<Areas> {
+    return this.http.post<Areas>(`${API}/areas/${pokemonId}/${areaId}`, {});
   }
 
 }

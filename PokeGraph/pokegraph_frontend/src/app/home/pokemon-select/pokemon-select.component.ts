@@ -7,6 +7,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {ModalWinnerComponent} from "../modal-winner/modal-winner.component";
 import {AreaService} from "./area.service";
 import {Area} from "./areas";
+import {PokemonNotFoundComponent} from "../pokemon-not-found/pokemon-not-found.component";
 
 
 @Component({
@@ -21,12 +22,12 @@ export class PokemonSelectComponent implements OnInit {
   imageAlt: any;
   imageSourceSelf: any;
   imageSourceOther: any;
-  firstPokemon: any = null;
-  secondPokemon: any = null;
+  pokemon: any = null;
+  area: any = null;
 
   pokemonForm = this.formBuilder.group({
-    pokemon1: '',
-    pokemon2: '',
+    pokemon: '',
+    area: '',
   });
 
   constructor(
@@ -54,6 +55,17 @@ export class PokemonSelectComponent implements OnInit {
       });
       this.optionsAreas = response;
     })
+  }
+
+  openDialogError(): void {
+    const dialogRef = this.dialog.open(PokemonNotFoundComponent, {
+      width: '500px',
+      height: '500px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 
   openDialog(response: any): void {
@@ -87,24 +99,27 @@ export class PokemonSelectComponent implements OnInit {
   loadPokemonSelf($event: MatSelectChange) {
     if($event.value !== null){
       this.imageSourceSelf = $event.value.url
-      this.firstPokemon = $event.value.id
+      this.pokemon = $event.value.id
     } else {
-      this.firstPokemon = $event.value
+      this.pokemon = $event.value
     }
   }
   loadPokemonOther($event: MatSelectChange) {
     if($event.value !== null){
-      this.imageSourceOther = $event.value.url
-      this.secondPokemon = $event.value.id
+      this.area = $event.value.id
     } else {
-      this.secondPokemon = $event.value
+      this.area = $event.value
     }
   }
 
-  battle() {
-    this.pokemonService.battlePokemon(this.firstPokemon, this.secondPokemon).subscribe((response: any) => {
-      this.openDialog(response);
-    });
 
+
+  find() {
+    this.areaService.findClosestArea(this.pokemon, this.area).subscribe((response: any) => {
+      this.openDialog(response);
+      }, (error: any) => {
+      this.openDialogError();
+      }
+    );
   }
 }

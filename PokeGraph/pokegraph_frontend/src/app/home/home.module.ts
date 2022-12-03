@@ -12,6 +12,7 @@ import {MatSelectModule} from "@angular/material/select";
 import {ReactiveFormsModule} from "@angular/forms";
 import { ModalWinnerComponent } from './modal-winner/modal-winner.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import { PokemonNotFoundComponent } from './pokemon-not-found/pokemon-not-found.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import {MatDialogModule} from "@angular/material/dialog";
     HomeComponent,
     PokemonSelectComponent,
     ModalWinnerComponent,
+    PokemonNotFoundComponent,
   ],
   imports: [
     CommonModule,

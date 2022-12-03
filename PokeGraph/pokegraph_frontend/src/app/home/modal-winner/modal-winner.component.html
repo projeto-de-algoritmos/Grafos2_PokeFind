@@ -2,9 +2,14 @@
   <button class="close" (click)="onNoClick()">
     <mat-icon>close</mat-icon>
   </button>
-  <div class="titulo"> The winner is</div>
-  <div class="name" >{{pokemon.name}} </div>
+  <div class="titulo"> We find the pokemon at</div>
+  <div class="name" >{{area.name}} </div>
   <div mat-dialog-actions style="padding: 0; height: 60px">
-    <img class="imagem" style="width:280px; height:280px" [src]="pokemon.url">
+    <img class="imagem" style="width:280px; height:280px" [src]="area.url">
+  </div>
+  <div>
+    <div mat-dialog-actions style="text-align: center;">
+      {{area.areas}}
+    </div>
   </div>
 </body>

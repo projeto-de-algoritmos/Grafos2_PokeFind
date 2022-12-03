@@ -1,7 +1,7 @@
 package br.com.pokegraph.service;
 
 import br.com.pokegraph.dto.AreaDTO;
-import br.com.pokegraph.dto.PokemonDTO;
+import br.com.pokegraph.dto.AreaEcontradaDTO;
 import br.com.pokegraph.exception.EmptyListPokemonException;
 import br.com.pokegraph.model.Area;
 import br.com.pokegraph.model.Pokemon;
@@ -48,7 +48,7 @@ public class AreaService {
         return pokemonAreas;
     }
 
-    public AreaNode findClosestArea(Long idPokemon, Long idArea){
+    public AreaEcontradaDTO findClosestArea(Long idPokemon, Long idArea){
 
         //ids de areas onde o pokemon selecionado se encontra
         List<Long> pokemonAreas= findAllByPokemon(idPokemon);
@@ -79,7 +79,22 @@ public class AreaService {
             }
         }
 
-        return closestNode;
+        AreaEcontradaDTO dto = new AreaEcontradaDTO();
+        try {
+            Optional<Area> optionalArea = areaRepository.findById(closestNode.id);
+            dto.setName(optionalArea.get().getName());
+            dto.setUrl(optionalArea.get().getUrl());
+            List<String> names = new ArrayList<String>();
+            closestNode.shortestPath.forEach(path -> {
+                Optional<Area> areaOpt = areaRepository.findById(path.getId());
+                names.add(areaOpt.get().getName());
+                dto.setAreas(names);
+
+            });
+        } catch (NoSuchElementException e){
+            throw new EmptyListPokemonException("Não foi encontrados locais para este pokémon");
+        }
+        return dto;
     }
 
     public MapGraph initAreaGraph(){

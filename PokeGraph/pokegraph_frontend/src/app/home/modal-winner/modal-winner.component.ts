@@ -21,7 +21,7 @@ export class ModalWinnerComponent{
 
   ) {}
 
-  pokemon: any = this.data
+  area: any = this.data
 
   onNoClick(): void {
     this.dialogRef.close();
