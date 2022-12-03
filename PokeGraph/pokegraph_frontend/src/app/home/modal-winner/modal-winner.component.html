@@ -7,9 +7,9 @@
   <div mat-dialog-actions style="padding: 0; height: 60px">
     <img class="imagem" style="width:280px; height:280px" [src]="area.url">
   </div>
-  <div>
-    <div mat-dialog-actions style="text-align: center;">
-      {{area.areas}}
+  <div style="text-align: center;">
+    <div *ngFor="let a of area.areas"  (change)="print()">
+      {{a}}
     </div>
   </div>
 </body>

@@ -26,4 +26,8 @@ export class ModalWinnerComponent{
   onNoClick(): void {
     this.dialogRef.close();
   }
+
+  print() {
+    console.log(this.area)
+  }
 }

@@ -21,7 +21,7 @@ export class PokemonSelectComponent implements OnInit {
   optionsAreas: any[] = [];
   imageAlt: any;
   imageSourceSelf: any;
-  imageSourceOther: any;
+  imageArea: any;
   pokemon: any = null;
   area: any = null;
 
@@ -91,7 +91,8 @@ export class PokemonSelectComponent implements OnInit {
   extractArea(area: Area) {
     return {
       id: area.id,
-      name: area.name
+      name: area.name,
+      url: area.url
     };
   }
 
@@ -104,8 +105,10 @@ export class PokemonSelectComponent implements OnInit {
       this.pokemon = $event.value
     }
   }
-  loadPokemonOther($event: MatSelectChange) {
+  loadArea($event: MatSelectChange) {
+    console.log($event.value)
     if($event.value !== null){
+      this.imageArea = $event.value.url
       this.area = $event.value.id
     } else {
       this.area = $event.value
