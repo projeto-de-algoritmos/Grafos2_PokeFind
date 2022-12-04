@@ -14,6 +14,11 @@
   font-size: 1.5em;
   text-align: center;
 }
+.description{
+  color: black;
+  font-size: 1em;
+  text-align: center;
+}
 .name{
   font-size: 3em;
   color: yellow;

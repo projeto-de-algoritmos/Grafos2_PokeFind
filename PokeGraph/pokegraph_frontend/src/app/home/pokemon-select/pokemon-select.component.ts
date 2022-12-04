@@ -106,7 +106,6 @@ export class PokemonSelectComponent implements OnInit {
     }
   }
   loadArea($event: MatSelectChange) {
-    console.log($event.value)
     if($event.value !== null){
       this.imageArea = $event.value.url
       this.area = $event.value.id
