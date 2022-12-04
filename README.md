@@ -21,15 +21,16 @@ O objetivo do PokeFind é apresentar uma interface direta e simples de utilizar,
 
 ### Pagina inicial (Sem Seleção)
 
-![Pokemons não selecionados](assets-readme/pokemon-not-selected.jpeg) 
+![Itens não selecionados](assets-readme/pokefind-notselected.png) 
 
-### Pagina inicial (Pokemons Selecionados)
+### Pagina inicial (Area e Pokemon Selecionados)
 
-![Pokemons selecionados](assets-readme/pokemon-selected.jpeg) 
+![Pokemons selecionados](assets-readme/pokefind-selected.png) 
 
-### Modal de vitória
+### Modal de caminho
 
-![Modal Vitória](assets-readme/modal-winner.jpeg) 
+![Modal Caminho Inicio](assets-readme/pokefind-modal-1.png) 
+![Modal Caminho Final](assets-readme/pokefind-modal-2.png) 
 
 ## Instalação 
 **Linguagem**: Java, Typescript<br>
