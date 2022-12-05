@@ -3,7 +3,11 @@ img{
 }
 
 .area-image{
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: red;
+  border-width: 15px;
 }
 
 .column {

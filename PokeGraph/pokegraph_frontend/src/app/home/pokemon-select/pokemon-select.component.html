@@ -13,7 +13,7 @@
               <mat-select placeholder="Select Area" class="form-control" (selectionChange)="loadArea($event)">
                 <mat-option *ngFor="let option of optionsAreas" [value]="option">
                   {{option.name}}
-                  <img class="area-image" style="width:30px; height:30px;position: absolute; right: 0" src="{{option.url}}">
+                  <img style="width:30px; height:30px;position: absolute; right: 0; object-fit: cover" src="{{option.url}}">
                 </mat-option>
               </mat-select>
             </mat-form-field>
