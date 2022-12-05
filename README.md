@@ -65,13 +65,9 @@ http://localhost:4200
 ```
 
 ## Uso 
-Para a utilizaçao devemos selecionar dois pokémons e em seguida apertar o botão: ``"Go!"``.
+Para a utilizaçao devemos selecionar a área inicial da busca e o pokemon procurado e em seguida apertar o botão: ``"Go!"``.
 
-## Outros 
-
-### Link Repositório Antigo
-Em vista de problemas na criação do git-hub na organização da disciplina,
-segue o link para o [Repositório Antigo](https://github.com/yandrade1305/grafos1_pokegraph).
+## Outros
 
 ### Download Apresentação
 
