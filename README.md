@@ -44,7 +44,7 @@ Para rodar o backend (sem IDE) basta acessar o diretório pokegraph_backend e ro
 mvn spring-boot:run 
 ```
 
-Para rodar o backend (com a IDE) instalada basta apertar o botão "▶" no método main da classe ``br.gov.incra.conflitoagrario.ConflitoAgrarioApplication``.
+Para rodar o backend (com a IDE) instalada basta apertar o botão "▶" no método main da classe ``br.com.pokefind.PokeFindApplication``.
 
 Para rodar o frontend basta ir no diretório pokegraph_frontend e rodar o comando:
 
