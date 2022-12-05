@@ -2,6 +2,10 @@ img{
   margin-bottom: 10px;
 }
 
+.area-image{
+  object-fit: contain;
+}
+
 .column {
   float: left;
   width: 33.33%;

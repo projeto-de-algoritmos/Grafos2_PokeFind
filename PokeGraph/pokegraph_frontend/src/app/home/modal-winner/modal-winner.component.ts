@@ -14,7 +14,7 @@ export interface DialogData {
   styleUrls: ['./modal-winner.component.css']
 })
 
-export class ModalWinnerComponent{
+export class ModalWinnerComponent implements OnInit{
   constructor(
     public dialogRef: MatDialogRef<ModalWinnerComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
@@ -25,5 +25,13 @@ export class ModalWinnerComponent{
 
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  print() {
+    console.log(this.area)
+  }
+
+  ngOnInit(): void {
+    console.log(this.area)
   }
 }
